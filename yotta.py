@@ -21,8 +21,8 @@ def get_ticket():
 # tests indicate it doesn't really make a difference at this scale (small tix)
 def get_ticket2():
     yotta = random.randint(1, 25)
-    rest = set()
-    while len(rest) < 7:
+    rest = set(random.randint(1, 70))
+    while len(rest) < 6:
         next = random.randint(1, 70)
         if next not in rest:
             rest.add(next)
