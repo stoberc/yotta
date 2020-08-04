@@ -44,19 +44,19 @@ def reward(ticket, jackpot):
     if ticket[0] == jackpot[0]: # yotta hit
         if nmatches == 0: return 0.1
         if nmatches == 1: return 0.15
-        if nmatches == 2: return 0.75
-        if nmatches == 3: return 10
-        if nmatches == 4: return 500 # model: split so could be zero in limit
-        if nmatches == 5: return 1000 # ditto
+        if nmatches == 2: return 0.70
+        if nmatches == 3: return 8
+        if nmatches == 4: return 1000 # model: split so could be zero in limit
+        if nmatches == 5: return 5000 # ditto
         if nmatches == 6: return 5800000 # ditto
     else:
         if nmatches == 0: return 0
         if nmatches == 1: return 0
         if nmatches == 2: return 0
-        if nmatches == 3: return 0.4
-        if nmatches == 4: return 15
-        if nmatches == 5: return 800 # model: split so could be zero in limit
-        if nmatches == 6: return 10000 # ditto
+        if nmatches == 3: return 0.3
+        if nmatches == 4: return 10
+        if nmatches == 5: return 1500 # model: split so could be zero in limit
+        if nmatches == 6: return 15000 # ditto
 
 # based on an amount of money, buys the correct number of tickets, runs the
 # lotto, and returns the new principal
