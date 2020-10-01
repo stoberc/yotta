@@ -10,7 +10,7 @@ import time
 # could make future operations more efficient by sorting or using sets, but
 # probably not worth the trouble
 def get_ticket():
-    ticket = [random.randint(1, 25)]
+    ticket = [random.randint(1, 63)]
     while len(ticket) < 7:
         next = random.randint(1, 70)
         if next not in ticket[1:]:
@@ -20,7 +20,7 @@ def get_ticket():
 # same thing but set based to maybe improve peformance
 # tests indicate it doesn't really make a difference at this scale (small tix)
 def get_ticket2():
-    yotta = random.randint(1, 25)
+    yotta = random.randint(1, 63)
     rest = set(random.randint(1, 70))
     while len(rest) < 6:
         next = random.randint(1, 70)
@@ -56,7 +56,7 @@ def reward(ticket, jackpot):
         if nmatches == 3: return 0.3
         if nmatches == 4: return 10
         if nmatches == 5: return 1500 # model: split so could be zero in limit
-        if nmatches == 6: return 15000 # ditto
+        if nmatches == 6: return 37,990 # ditto, cash option instead of Tesla
 
 # based on an amount of money, buys the correct number of tickets, runs the
 # lotto, and returns the new principal
